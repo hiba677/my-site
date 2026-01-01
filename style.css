@@ -220,3 +220,58 @@ footer ul {
 footer ul li {
     margin-bottom: 5px;
 }
+/* CONTACT PAGE */
+.contact-section {
+    min-height: 100vh;
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.contact-section h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #0a1f44;
+}
+
+.contact-text {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #ff1493;
+}
