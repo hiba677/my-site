@@ -14,17 +14,17 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
                     <a href="#">Catégories</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Bijoux</a></li>
-                        <li><a href="#">Sacs</a></li>
+                        <li><a href="accessoires.html">Bijoux</a></li>
+                        <li><a href="sacs.html">Sacs</a></li>
                         <li><a href="#">Montres</a></li>
                         <li><a href="#">Autres</a></li>
                     </ul>
                 </li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -32,31 +32,58 @@
 
 
     <section class="hero">
-        <img id="heroImage" src="images/hero1.jpg" alt="Image principale">
+        <img id="heroImage" src="images/hero.jpg" alt="Image principale">
     </section>
 
 
     <section class="product-section">
         <div class="section-header">
             <h2>Bijoux</h2>
-            <button>Voir tout</button>
+            <a href="accessoires.html" class="btn-voir-tout">Voir tout</a>
+
         </div>
         <div class="products">
             <div class="product">
                 <img src="images/bijou1.jpg" alt="Bijou 1">
-                <p class="price">50€</p>
+                <p class="price">50€</p>            
+                <button
+                   class="details-btn"
+                   data-title="Bijou en or"
+                   data-price="50€"
+                   data-image="images/bijou1.jpg">Plus de détails</button>
+
+
             </div>
+
             <div class="product">
                 <img src="images/bijou2.jpg" alt="Bijou 2">
                 <p class="price">45€</p>
+                <button
+                   class="details-btn"
+                   data-title="Bijou en or"
+                   data-price="50€"
+                   data-image="images/bijou1.jpg">Plus de détails</button>
+
             </div>
             <div class="product">
                 <img src="images/bijou3.jpg" alt="Bijou 3">
                 <p class="price">60€</p>
+                <button
+                   class="details-btn"
+                   data-title="Bijou en or"
+                   data-price="50€"
+                   data-image="images/bijou1.jpg">Plus de détails</button>
+
             </div>
             <div class="product">
                 <img src="images/bijou4.jpg" alt="Bijou 4">
                 <p class="price">55€</p>
+                <button
+                   class="details-btn"
+                   data-title="Bijou en or"
+                   data-price="50€"
+                   data-image="images/bijou1.jpg">Plus de détails</button>
+
             </div>
         </div>
     </section>
@@ -65,24 +92,48 @@
     <section class="product-section">
         <div class="section-header">
             <h2>Sacs</h2>
-            <button>Voir tout</button>
+             <a href="sacs.html" class="btn-voir-tout">Voir tout</a>
         </div>
         <div class="products">
             <div class="product">
                 <img src="images/sac1.jpg" alt="Sac 1">
                 <p class="price">80€</p>
+                <button
+                   class="details-btn"
+                   data-title="Bijou en or"
+                   data-price="50€"
+                   data-image="images/bijou1.jpg">Plus de détails</button>
+
             </div>
             <div class="product">
                 <img src="images/sac2.jpg" alt="Sac 2">
                 <p class="price">75€</p>
+                <button
+                   class="details-btn"
+                   data-title="Bijou en or"
+                   data-price="50€"
+                   data-image="images/bijou1.jpg">Plus de détails</button>
+
             </div>
             <div class="product">
                 <img src="images/sac3.jpg" alt="Sac 3">
                 <p class="price">90€</p>
+                <button
+                   class="details-btn"
+                   data-title="Bijou en or"
+                   data-price="50€"
+                   data-image="images/bijou1.jpg">Plus de détails</button>
+
             </div>
             <div class="product">
                 <img src="images/sac4.jpg" alt="Sac 4">
                 <p class="price">85€</p>
+                <button
+                   class="details-btn"
+                   data-title="Bijou en or"
+                   data-price="50€"
+                   data-image="images/bijou1.jpg">Plus de détails</button>
+
             </div>
         </div>
     </section>
@@ -96,12 +147,14 @@
     <section class="testimonials">
         <h2>Avis des clients</h2>
         <div class="testimonial">
-            <p>"Produit magnifique et livraison rapide!"</p>
-            <span>- Cliente 1</span>
+            <span>- Sofia M</span>
+            <p>"La qualité est incroyable et chaque pièce ajoute une touche unique à mon style.
+                  Je recommande sans hésiter !""</p>
         </div>
         <div class="testimonial">
-            <p>"Service client très réactif."</p>
-            <span>- Cliente 2</span>
+            <span>- Leila E</span>
+            <p>"Les photos ne rendent pas justice à la beauté des articles.
+                 J’ai déjà reçu plein de compliments depuis que je les porte."</p>
         </div>
     </section>
 
@@ -150,7 +203,17 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    
+   <div id="product-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <img id="modal-image" src="" alt="">
+    <h2 id="modal-title"></h2>
+    <p id="modal-price"></p>
+    <button class="add-to-cart">Ajouter au panier</button>
+  </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
 
