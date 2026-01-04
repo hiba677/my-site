@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Détails du produit</title>
+<style>
+/* ===== CSS moderne ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+/* Image produit */
+.product-left {
+    flex: 1 1 40%;
+    min-width: 300px;
+}
+
+.product-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-left img:hover {
+    transform: scale(1.05);
+}
+
+/* Infos produit */
+.product-right {
+    flex: 1 1 60%;
+    padding: 30px;
+}
+
+.product-right h2 {
+    color: #b71c1c;
+    margin-bottom: 10px;
+}
+
+.product-right p {
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.product-right label {
+    font-weight: bold;
+}
+
+.product-right input[type="text"],
+.product-right input[type="email"],
+.product-right input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Bouton payer */
+#payBtn {
+    background-color: #b71c1c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+#payBtn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+    }
+
+    .product-left, .product-right {
+        flex: 1 1 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="product-container">
+    <div class="product-left">
+        <img id="prodImg" src="images/hero-sac.jpg" alt="Produit">
+    </div>
+
+    <div class="product-right">
+        <h2 id="prodName">Sac Rouge</h2>
+        <p id="prodDesc">Un sac élégant pour toutes les occasions.</p>
+        <p id="prodPrice">Prix: 49.99€</p>
+
+        <label>Quantité:</label>
+        <input type="number" value="1" min="1" id="prodQty">
+
+        <h3>Vos informations</h3>
+        <input type="text" placeholder="Nom complet" id="name" required>
+        <input type="email" placeholder="Email" id="email" required>
+        <input type="text" placeholder="Adresse" id="address" required>
+        <input type="text" placeholder="Numéro de carte bancaire" id="card" required>
+
+        <button id="payBtn">Payer</button>
+    </div>
+</div>
+
+<script>
+// ===== JS pour prix dynamique et paiement =====
+const qtyInput = document.getElementById("prodQty");
+const priceElement = document.getElementById("prodPrice");
+const payBtn = document.getElementById("payBtn");
+
+// Prix du produit (tu peux changer selon le produit)
+let productPrice = 49.99;
+
+// Mettre à jour le prix total en direct selon la quantité
+qtyInput.addEventListener("input", () => {
+    const qty = parseInt(qtyInput.value) || 1;
+    priceElement.innerText = `Prix: ${(productPrice * qty).toFixed(2)}€`;
+});
+
+// Gestion du bouton payer
+payBtn.addEventListener("click", () => {
+    const qty = parseInt(qtyInput.value) || 1;
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const card = document.getElementById("card").value.trim();
+
+    if (!name || !email || !address || !card) {
+        alert("Merci de remplir toutes les informations !");
+        return;
+    }
+
+    // Animation bouton
+    payBtn.innerText = "Paiement en cours...";
+    payBtn.disabled = true;
+
+    setTimeout(() => {
+        alert(`Merci pour votre achat !\nProduit: Sac Rouge\nQuantité: ${qty}\nPrix total: ${(productPrice*qty).toFixed(2)}€`);
+        window.location.href = "index.html"; // Retour à l'accueil
+    }, 1000);
+});
+</script>
+
+</body>
+</html>
+
